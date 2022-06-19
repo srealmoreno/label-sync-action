@@ -53,27 +53,5 @@
     "semver": "7.3.7",
     "ts-standard": "11.0.0",
     "typescript": "4.7.4"
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true,
-      "browser": false,
-      "es6": true
-    },
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "extends": [
-      "./node_modules/ts-standard/eslintrc.json"
-    ],
-    "rules": {}
-  },
-  "prettier": {
-    "trailingComma": "none",
-    "singleQuote": true,
-    "printWidth": 120,
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": false
   }
 }
