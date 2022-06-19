@@ -1,7 +1,7 @@
 name: Label Sync Action
 description:
   Keeps your labels in sync in a GitHub repo(s) from a config file.
-  Manage all tags from all your repositories in a single place.
+  Manage all tags from all your repos in a single place.
 
 author: Salvador Real [srealmoreno] <srealmoreno@srealmoreno.com>
 
