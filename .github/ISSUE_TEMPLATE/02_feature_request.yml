@@ -5,14 +5,18 @@ labels: ["feature-request 💡"]
 body:
   - type: markdown
     attributes:
-      value: |
-        First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are greatly appreciated.
+      value:
+        First off, thanks for taking the time to contribute! Contributions are what make the open-source
+        community such an amazing place to learn, inspire, and create. Any contributions you make will
+        benefit everybody else and are greatly appreciated.
 
   - type: input
     id: description
     attributes:
       label: Feature description
-      description: A clear and concise description of what the feature request is. Please include if your feature request is related to a problem
+      description:
+        A clear and concise description of what the feature request is. Please include if your feature request
+        is related to a problem
     validations:
       required: true
 
@@ -20,7 +24,7 @@ body:
     id: code-snippet
     attributes:
       label: Related Code
-      description: "If you are able to illustrate the bug or feature request with an example, please provide it here"
+      description: If you are able to illustrate the bug or feature request with an example, please provide it here
     validations:
       required: false
 
@@ -28,15 +32,19 @@ body:
     id: additional
     attributes:
       label: Additional Context
-      description: "List any other information that is relevant to your issue. Stack traces, related issues, suggestions on how to add, use case, Stack Overflow links, forum links, screenshots, OS if applicable, etc."
+      description:
+        List any other information that is relevant to your issue. Stack traces, related issues, suggestions on
+        how to add, use case, Stack Overflow links, forum links, screenshots, OS if applicable, etc.
     validations:
       required: false
 
   - type: checkboxes
     attributes:
       label: Self-service
-      description: |
-        If you feel like you could contribute to this issue, please check the box below. This would tell us and other people looking for contributions that someone's working on it.
+      description:
+        If you feel like you could contribute to this issue, please check the box below. This would tell us and
+        other people looking for contributions that someone's working on it.
+
         If you do check this box, please send a pull request within 7 days so we can still delegate this to someone else.
       options:
         - label: I'd be willing to address this documentation request myself.
@@ -45,14 +53,14 @@ body:
     attributes:
       label: Have you read the Contributing Guidelines?
       options:
-        - label: I have read the [Contributing Guidelines](https://github.com/{{username}}/{{repo}}/blob/main/docs/CONTRIBUTING.md).
+        - label: I have read the [Contributing Guidelines](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CONTRIBUTING.md).
           required: true
 
   - type: checkboxes
     attributes:
       label: Are you familiar with Contributor Covenant Code of Conduct?
       options:
-        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/{{username}}/{{repo}}/blob/main/docs/CODE_OF_CONDUCT.md).
+        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CODE_OF_CONDUCT.md).
           required: true
 
   - type: input

@@ -5,17 +5,19 @@ labels: ["documentation 📝"]
 body:
   - type: markdown
     attributes:
-      value: |
-        This template is strictly used for documentation requests, including:
+      value:
+        This template is strictly used for documentation requests, including':'
 
         - Elaborating on a particular topic;
         - Updating external links;
         - Anything else that doesn't require touching the codebase itself.
 
-        If you followed the documentation but things don't work, take some time to consider if it's the documentation or the code that's wrong. In the latter, prefer using the "bug" template.
+        If you followed the documentation but things don't work, take some time to consider if it's
+        the documentation or the code that's wrong. In the latter, prefer using the "bug" template.
 
         You may proceed directly to sending a pull request without filing this issue, and we can improve on your work.
-        If you think some of the requirements above are not met, or if you are not able to contribute yourself, the issue is still welcomed.
+        If you think some of the requirements above are not met, or if you are not able to contribute yourself,
+        the issue is still welcomed.
 
   - type: textarea
     id: request-info
@@ -40,9 +42,12 @@ body:
   - type: checkboxes
     attributes:
       label: Self-service
-      description: |
-        If you feel like you could contribute to this issue, please check the box below. This would tell us and other people looking for contributions that someone's working on it.
-        If you do check this box, please send a pull request within 7 days so we can still delegate this to someone else.
+      description:
+        If you feel like you could contribute to this issue, please check the box below. This would tell us
+        and other people looking for contributions that someone's working on it.
+
+        If you do check this box, please send a pull request within 7 days so we can still delegate this
+        to someone else.
       options:
         - label: I'd be willing to address this documentation request myself.
 
@@ -50,14 +55,14 @@ body:
     attributes:
       label: Have you read the Contributing Guidelines?
       options:
-        - label: I have read the [Contributing Guidelines](https://github.com/{{username}}/{{repo}}/blob/main/docs/CONTRIBUTING.md).
+        - label: I have read the [Contributing Guidelines](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CONTRIBUTING.md).
           required: true
 
   - type: checkboxes
     attributes:
       label: Are you familiar with Contributor Covenant Code of Conduct?
       options:
-        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/{{username}}/{{repo}}/blob/main/docs/CODE_OF_CONDUCT.md).
+        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CODE_OF_CONDUCT.md).
           required: true
 
   - type: input

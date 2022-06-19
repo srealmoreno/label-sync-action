@@ -5,19 +5,37 @@ labels: ["bug 🐞"]
 body:
   - type: markdown
     attributes:
-      value: |
-        First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are greatly appreciated.
+      value:
+        First off, thanks for taking the time to contribute! Contributions are what make the open-source
+        community such an amazing place to learn, inspire, and create. Any contributions you make will
+        benefit everybody else and are greatly appreciated.
+
   - type: textarea
-    id: environment
+    id: config-file
     attributes:
-      label: Environment
-      description: >
-        Please describe your environment in markdown
+      label: Config file of your workflow
+      description:
+        Please write your configuration file in YAML format. `cat .github/workflows/sync-labels.yml`
+
         It may contain any additional information which would help to reproduce the issue.
       placeholder: |
-        Browser: Chrome v..v.v
-        OS: Linux v..v.v
-        ...
+        name: ♻️ Sync Labels
+
+        on:
+        workflow_dispatch:
+
+        jobs:
+          labels:
+            name: ♻️ Sync labels
+            runs-on: ubuntu-20.04
+            steps:
+              - name: ⤵️ Check out code from GitHub
+                uses: actions/checkout@v3
+
+              - name: 🚀 Run Label Sync
+                uses: srealmoreno/label-sync-action@v1
+                with:
+                  config-file: .github/labels/labels.yml
     validations:
       required: true
 
@@ -25,7 +43,7 @@ body:
     id: description
     attributes:
       label: Describe the bug
-      description: >
+      description:
         A clear and concise description of the bug. Please include as much detail as possible.
     validations:
       required: true
@@ -46,18 +64,14 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: reproduce
+  - type: input
+    id: logs
     attributes:
-      label: Steps to reproduce
-      description: Explain the steps required to duplicate the issue
-      placeholder: |
-        1. Go to '...'
-        2. Click on '...'
-        3. Scroll down to '...'
-        4. See error
+      label: Logs of the workflow
+      description: Please include url of the logs of the workflow if is possible.
+      placeholder: https://github.com/srealmoreno/label-sync-action/runs/123456789
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional
@@ -80,14 +94,14 @@ body:
     attributes:
       label: Have you read the Contributing Guidelines?
       options:
-        - label: I have read the [Contributing Guidelines](https://github.com/{{username}}/{{repo}}/blob/main/docs/CONTRIBUTING.md).
+        - label: I have read the [Contributing Guidelines](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CONTRIBUTING.md).
           required: true
 
   - type: checkboxes
     attributes:
       label: Are you familiar with Contributor Covenant Code of Conduct?
       options:
-        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/{{username}}/{{repo}}/blob/main/docs/CODE_OF_CONDUCT.md).
+        - label: I have read the [Contributor Covenant Code of Conduct](https://github.com/srealmoreno/label-sync-action/blob/main/docs/CODE_OF_CONDUCT.md).
           required: true
 
   - type: input

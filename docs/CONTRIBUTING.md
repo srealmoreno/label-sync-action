@@ -1,7 +1,7 @@
-[discussions]:        https://github.com/{{username}}/{{repo}}/discussions
-[issues]:             https://github.com/{{username}}/{{repo}}/issues
-[pull requests]:      https://github.com/{{username}}/{{repo}}/pulls
-[open a pull request]:https://github.com/{{username}}/{{repo}}/compare?expand=1
+[discussions]:        https://github.com/srealmoreno/label-sync-action/discussions
+[issues]:             https://github.com/srealmoreno/label-sync-action/issues
+[pull requests]:      https://github.com/srealmoreno/label-sync-action/pulls
+[open a pull request]:https://github.com/srealmoreno/label-sync-action/compare?expand=1
 
 # 📚 Contributing Guidelines
 
@@ -45,7 +45,7 @@ Below you will find the process and workflow used to review and merge your chang
 ```bash
 git clone https://github.com/<your-username>/<repo-name>
 cd <repo-name>
-git remote add upstream https://github.com/{{username}}/{{repo}}
+git remote add upstream https://github.com/srealmoreno/label-sync-action
 ```
 
 - If you have already forked the project, update your copy before working.
@@ -154,9 +154,9 @@ request.
 
 - Create a personal fork of the project on Github.
 - Clone the fork on your local machine. Your remote repo on Github is called `origin`.
-  - `git clone https://github.com/<your-username>/{{repo}}`
+  - `git clone https://github.com/<your-username>/label-sync-action`
 - Add the original repository as a remote called `upstream`.
-  - `git remote add upstream https://github.com/{{username}}/{{repo}}`
+  - `git remote add upstream https://github.com/srealmoreno/label-sync-action`
 - If you created your fork a while ago be sure to pull upstream changes into your
   local repository.
 - Create a new branch to work on! Branch from `develop` if it exists, else from `main`.

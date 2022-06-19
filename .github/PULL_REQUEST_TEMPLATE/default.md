@@ -16,7 +16,7 @@
 - [ ] Improving performance of the project (not introducing new features)
 - [ ] Other (please describe):
 
-Issue Number: N/A
+Resolve Issue Number: N/A
 
 ## What is the current behavior?
 
