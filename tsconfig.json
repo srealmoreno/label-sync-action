@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@utils/*": [
+        "src/utils/*",
+      ],
+      "@resources/*": [
+        "src/resources/*"
+      ],
+      "@typings/*": [
+        "src/typings/*"
+      ],
+      "@interfaces/*": [
+        "src/typings/interfaces/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@schemas/*": [
+        "src/schemas/*"
+      ],
+    },
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true
+  }
+}

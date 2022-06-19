@@ -1,0 +1,109 @@
+name: Label Sync Action
+description:
+  Keeps your labels in sync in a GitHub repo(s) from a config file.
+  Manage all tags from all your repositories in a single place.
+
+author: Salvador Real [srealmoreno] <srealmoreno@srealmoreno.com>
+
+branding:
+  icon: tag
+  color: blue
+
+runs:
+  using: node16
+  main: dist/label-sync-action.cjs
+
+inputs:
+  token:
+    required: false
+    default: ${{ github.token }}
+    description: Token to use for edit the labels of the repos
+
+  config-file:
+    required: false
+    default: .github/labels.yml
+    description:
+      Path(s) (and/or URL(s)) to the JSON or YAML file containing the label
+      definitions.
+
+  clean-labels:
+    required: false
+    default: 'false'
+    description:
+      Clean labels not defined in the config file from the repo(s).
+
+  repository:
+    required: false
+    description:
+      Repository or List of repositories to sync the labels. (Full name e.g. 'srealmoreno/test-repo')
+      This option cannot be combined with `auto-discover-repos` or its options
+
+  auto-discover-repos:
+    required: false
+    default: 'false'
+    description:
+      Discover the list of repositories automatically.
+      See options below
+        1.owner
+        2.account-type
+        3.exclude-repos
+        4.exclude-forked-repos
+        6.exclude-archived-repos
+        7.exclude-disabled-repos
+        8.exclude-private-repos
+
+  owner:
+    required: false
+    default: ${{ github.repository_owner }}
+    description:
+      Option 1 of `auto-discover-repos`.
+      Owner of the repositories to sync the labels.
+
+  account-type:
+    required: false
+    default: ${{ github.event.repository.owner.type }}
+    description:
+      Option 2 of `auto-discover-repos`.
+      Type of account to use to discover the repositories.
+      Can be either `org` or `user`.
+
+  exclude-repos:
+    required: false
+    default: ''
+    description:
+      Option 3 of `auto-discover-repos`.
+      string | string[] | regExp
+      to exclude from the list of repositories to sync the labels.
+      the regex can be RegExp(js) literal notation e.g. /my-repo/g
+
+      Note. The verification will be done only to the name of the
+      repository excluding the owner and the slash (/)
+        e.g. srealmoreno/my-repo -> my-repo
+
+  exclude-forked-repos:
+    required: true
+    default: 'true'
+    description:
+      Option 4 of `auto-discover-repos`.
+      Exclude forked repositories from the list of repositories to sync the labels.
+
+  exclude-archived-repos:
+    required: false
+    default: 'true'
+    description:
+      Option 6 of `auto-discover-repos`.
+      Exclude archived repositories from the list of repositories to sync the labels.
+
+  exclude-disabled-repos:
+    required: false
+    default: 'true'
+    description:
+      Option 7 of `auto-discover-repos`.
+      Exclude disabled repositories from the list of repositories to sync the labels.
+
+  exclude-private-repos:
+    required: true
+    default: 'true'
+    description:
+      Option 8 of `auto-discover-repos`.
+      Exclude private repositories from the list of repositories to sync the labels.

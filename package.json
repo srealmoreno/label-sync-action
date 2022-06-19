@@ -1,0 +1,79 @@
+{
+  "name": "label-sync-action",
+  "version": "1.0.1-beta.0",
+  "engines": {
+    "node": "v16"
+  },
+  "description": "Keeps your labels in sync in a GitHub repo(s) from a config file. Manage all tags from all your repositories in a single place.",
+  "main": "dist/label-sync-action.cjs",
+  "type": "module",
+  "scripts": {
+    "dist": "npm run bundle",
+    "bundle": "esbuild --outfile=dist/label-sync-action.cjs --platform=node --target=node16 --minify --bundle src/app.js",
+    "build:esm": " tsc --target es2022 --module es2022   --outDir build/esm2022 && tsc-alias --dir build/esm2022",
+    "build:esm6": "tsc --target es6    --module esm6     --outDir build/es6     && tsc-alias --dir build/esm6",
+    "build:cjs": " tsc --target es6    --module commonjs --outDir build/cjs     && tsc-alias --dir build/cjs",
+    "clean": "rm -rf build dist",
+    "lint": "ts-standard src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:build": "tsc --noEmit"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "label",
+    "sync",
+    "github-label-sync"
+  ],
+  "author": "Salvador Real - Srealmoreno <srealmoreno@srealmorneo.com>",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srealmoreno/github-label-sync.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srealmoreno/rae-tesis/issues/new/choose"
+  },
+  "homepage": "https://github.com/srealmoreno/github-label-sync",
+  "dependencies": {
+    "@actions/core": "1.9.0",
+    "ajv-errors": "3.0.0",
+    "axios": "0.27.2",
+    "github-label-sync": "2.2.0",
+    "js-yaml": "4.1.0",
+    "jsonc-simple-parser": "2.2.1",
+    "octokit": "1.8.0",
+    "regex-parser": "2.2.11"
+  },
+  "devDependencies": {
+    "@types/github-label-sync": "2.0.2",
+    "@types/js-yaml": "4.0.5",
+    "esbuild": "0.14.46",
+    "semver": "7.3.7",
+    "ts-standard": "11.0.0",
+    "typescript": "4.7.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": false,
+      "es6": true
+    },
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json"
+    ],
+    "rules": {}
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false
+  }
+}
