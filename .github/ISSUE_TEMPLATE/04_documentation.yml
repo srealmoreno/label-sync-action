@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value:
-        This template is strictly used for documentation requests, including':'
+        This template is strictly used for documentation requests, including
 
         - Elaborating on a particular topic;
         - Updating external links;
