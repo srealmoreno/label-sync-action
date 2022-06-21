@@ -5,6 +5,7 @@ name: 🟩 Node CI
 
 on:
   pull_request:
+    paths: [ src/** ]
     branches: [ main ]
 
 concurrency:
