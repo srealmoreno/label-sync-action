@@ -2,7 +2,8 @@
   "name": "label-sync-action",
   "version": "1.0.1-beta.0",
   "engines": {
-    "node": "v16"
+    "node": "v16",
+    "npm": "v8.12.2"
   },
   "description": "Keeps your labels in sync in a GitHub repo(s) from a config file. Manage all tags from all your repositories in a single place.",
   "main": "dist/label-sync-action.cjs",
@@ -14,7 +15,7 @@
     "build:esm6": "tsc --target es6    --module esm6     --outDir build/es6     && tsc-alias --dir build/esm6",
     "build:cjs": " tsc --target es6    --module commonjs --outDir build/cjs     && tsc-alias --dir build/cjs",
     "clean": "rm -rf build dist",
-    "lint": "ts-standard src",
+    "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:build": "tsc --noEmit"
   },
@@ -47,9 +48,14 @@
     "regex-parser": "2.2.11"
   },
   "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "3.0.0",
     "@types/github-label-sync": "2.0.2",
     "@types/js-yaml": "4.0.5",
-    "esbuild": "0.14.46",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/experimental-utils": "5.29.0",
+    "esbuild": "0.14.47",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-promise": "6.0.0",
     "semver": "7.3.7",
     "ts-standard": "11.0.0",
     "typescript": "4.7.4"
