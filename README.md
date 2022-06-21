@@ -198,7 +198,7 @@ tags in all repositories you can use the `auto-discover-repos` option.
 
 ## 🖇️ Contributing
 
-Please read [CONTRIBUTING](CONTRIBUTING.md) for details on our code of conduct,
+Please read [CONTRIBUTING](docs/CONTRIBUTING.md) for details on our code of conduct,
 and the process for submitting pull requests to us.
 
 ## 📖 Wiki
@@ -218,7 +218,7 @@ See also the list of [contributors][contributors] who participated in this proje
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](../LICENSE.md)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md)
 file for details
 
 ## 🎁 Acknowledgments
