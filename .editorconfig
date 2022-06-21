@@ -2,14 +2,21 @@ root = true
 
 [*]
 ident_size = 2
+indent_style = space
 charset = utf-8
 end_of_file = lf
 ident_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[Dockerfile]
-indent_style = tab
+# Ignore paths
+[{/dist/**,build/**}]
+indent_size = unset
+charset = unset
+indent_style = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
 
 [*.{md,markdown}]
 trim_trailing_whitespace = false
