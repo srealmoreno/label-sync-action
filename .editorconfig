@@ -10,7 +10,7 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 # Ignore paths
-[{/dist/**,build/**}]
+[{dist/**,build/**}]
 indent_size = unset
 charset = unset
 indent_style = unset
