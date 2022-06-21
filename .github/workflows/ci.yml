@@ -1,0 +1,115 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: 🟩 Node CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cache:
+    name: 💾 Cache dependencies
+    runs-on: ubuntu-20.04
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: 🚀 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+  eslint:
+    needs: [ cache ]
+    name: 🛂 Run eslint scanning
+    runs-on: ubuntu-20.04
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: 🚀 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🛡️ Run ESLint
+        run:
+          npm run lint --
+          --format @microsoft/eslint-formatter-sarif
+          --output-file eslint-results.sarif
+
+      - name: 💬 Reply comment
+        if: failure()
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            Oh eslint fail 😥!
+
+            See errors [here](https://github.com/srealmoreno/label-sync-action/pull/${{ github.event.pull_request.number }}/checks?check_run_id=${{ github.run_id }})
+
+            Thanks for taking the time to contribute  @${{ github.event.pull_request.user.login }}!
+
+            The eslint tests failed. Please fix the issues and submit a pull request again.
+
+            Try running the following command to see if the problem is resolved:
+
+            ```bash
+            npm run lint -- --fix
+            ```
+            Thanks!
+
+      - name: ⤴️ Upload analysis results to GitHub
+        if: always()
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: eslint-results.sarif
+          wait-for-processing: true
+
+  tests:
+    needs: [ cache ]
+    name: 🚀 Run tests
+    runs-on: ubuntu-20.04
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: 🚀 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🛡️ Test build
+        run: npm run --if-present test:build
+
+      - name: 🛡️ Test unit
+        run: npm run --if-present test:unit
+
+      - name: 🛡️ Test integration
+        run: npm run --if-present test:integration
+
+      - name: 🛡️ Test e2e
+        run: npm run --if-present test:e2e
