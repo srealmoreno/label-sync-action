@@ -61,11 +61,11 @@ jobs:
         if: failure()
         uses: peter-evans/create-or-update-comment@v2
         with:
-          issue-number: ${{ github.event.issue.number }}
+          issue-number: ${{ github.event.pull_request.number }}
           body: |
             Oh eslint fail 😥!
 
-            Thanks for taking the time to contribute  @${{ github.event.comment.user.login }}!
+            Thanks for taking the time to contribute  @${{ github.event.pull_request.user.login }}!
 
             The eslint tests failed. Please fix the issues and submit a pull request again.
 
