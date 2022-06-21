@@ -21,7 +21,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: 🚀 Setup node
         uses: actions/setup-node@v3
@@ -40,7 +40,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: 🚀 Setup node
         uses: actions/setup-node@v3
@@ -61,7 +61,7 @@ jobs:
         if: failure()
         uses: peter-evans/create-or-update-comment@v2
         with:
-          issue-number: ${{ github.event.pull_request.number }}
+          issue-number: ${{ github.event.issue.number }}
           body: |
             Oh eslint fail 😥!
 
@@ -91,7 +91,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: 🚀 Setup node
         uses: actions/setup-node@v3
