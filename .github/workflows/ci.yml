@@ -46,7 +46,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
 
       - name: 📦 Install dependencies
         run: npm ci
@@ -90,8 +89,6 @@ jobs:
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
 
       - name: 🚀 Setup node
         uses: actions/setup-node@v3
