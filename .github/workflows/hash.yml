@@ -1,0 +1,42 @@
+# Verify hash of the file: 'dist/label-sync-action.js'
+# when the file is changed in the pull request.
+name: 🛂 Verify Hash
+
+on:
+  pull_request:
+    paths: [ dist/label-sync-action.cjs ]
+    branches: [ main ]
+
+jobs:
+  verify:
+    name: 🛂 Verify Hash
+    runs-on: ubuntu-20.04
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - name: 🚀 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - name: 📦 Install dependencies
+        run: npm ci
+      - name: 🚀 Run esbuild
+        run:
+          npx esbuild src/app.js
+            --outfile=tmp/label-sync-action.cjs
+            --platform=node
+            --target=node16
+            --minify
+            --bundle
+      - name: 🛡️ Verify Hash dist/label-sync-action.cjs
+        run: |
+          PULL_REQUEST_HASH=$(sha256sum < dist/label-sync-action.cjs)
+          EXPECTED_HASH=$(sha256sum < tmp/label-sync-action.cjs)
+
+          if [ "$PULL_REQUEST_HASH" != "$EXPECTED_HASH" ]; then
+              echo "Hash it's different expected: '$CURRENT_HASH' actual: '$EXPECTED_HASH'" >&2
+              exit 1
+          fi
