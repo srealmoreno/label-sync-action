@@ -41,7 +41,7 @@ How to create a config file:
 
 - name: bug 🐞
   color: d73a4a
-  description: 
+  description:
     Inconsistencies or issues which will cause a problem for users or implementors.
 
 - name: documentation 📝
@@ -58,7 +58,7 @@ How to create a config file:
     // My label
     "name": "breaking-change 💥",
     "color": "#D93F0B",
-    "description": 
+    "description":
       "A change that changes the API or breaks backward compatibility for users.",
     "aliases": [
       "breaking"
@@ -67,7 +67,7 @@ How to create a config file:
   {
     "name": "bug 🐞",
     "color": "d73a4a",
-    "description": 
+    "description":
       "Inconsistencies or issues which will cause a problem for users or implementors."
   },
   {
@@ -109,25 +109,26 @@ jobs:
 Specify a repository or a list of repositories
 
 ```yaml
-- name: 🚀 Run Label Sync
-  uses: srealmoreno/label-sync-action@v1
-  with:
-    token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    
-    # Optional:
-    repositories: |
-      owner/repository-1
-      owner/repository-2
-    
-    # Optional:
-    config-file: |
-      .github/labels-1.yml
-      .github/labels-2.yml
-      https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
-    
-    # Optional:
-    # Clean other labels not defined in the config file(s)
-    clean-labels: false
+...
+      - name: 🚀 Run Label Sync
+        uses: srealmoreno/label-sync-action@v1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+          # Optional:
+          repositories: |
+            owner/repository-1
+            owner/repository-2
+
+          # Optional:
+          config-file: |
+            .github/labels-1.yml
+            .github/labels-2.yml
+            https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
+
+          # Optional:
+          # Clean other labels not defined in the config file(s)
+          clean-labels: false
 ```
 
 > Note: The default `GITHUB_TOKEN` will not have permissions to
@@ -140,11 +141,12 @@ It's possible to get the labels of url.
 If you use only url, the `actions/checkout@v3` step is not necessary
 
 ```yaml
-steps:
-  - name: 🚀 Run Label Sync
-    uses: srealmoreno/label-sync-action@v1
-    with:
-      config-file: https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
+...
+    steps:
+      - name: 🚀 Run Label Sync
+        uses: srealmoreno/label-sync-action@v1
+        with:
+          config-file: https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
 ```
 
 ### Auto Discover Repositories 🔍
@@ -153,45 +155,46 @@ If you have a very large list of repositories and you want to have the same
 tags in all repositories you can use the `auto-discover-repos` option.
 
 ```yaml
-- name: 🚀 Run Label Sync
-  uses: srealmoreno/label-sync-action@v1
-  with:
-    token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-    auto-discover-repos: true
+...
+      - name: 🚀 Run Label Sync
+        uses: srealmoreno/label-sync-action@v1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          auto-discover-repos: true
 
-    # Optional:
-    exclude-repos: repo-1
-    # You can specify a array of the repositories to be excluded
-    exclude-repos: |
-      repository-1
-      repository-2
-    # You can specify regex to exclude repositories
-    exclude-repos: /^repository-1$/u
+          # Optional:
+          exclude-repos: repo-1
+          # You can specify a array of the repositories to be excluded
+          exclude-repos: |
+            repository-1
+            repository-2
+          # You can specify regex to exclude repositories
+          exclude-repos: /^repository-1$/u
 
-    # Optional:
-    account-type: org | user
+          # Optional:
+          account-type: org | user
 
-    # Optional:
-    owner: owner
+          # Optional:
+          owner: owner
 
-    # Optional:
-    exclude-forked-repos: true
+          # Optional:
+          exclude-forked-repos: true
 
-    # Optional:
-    exclude-archived-repos: true
+          # Optional:
+          exclude-archived-repos: true
 
-    # Optional:
-    exclude-private-repos: true
+          # Optional:
+          exclude-private-repos: true
 
-    # Optional:
-    exclude-disabled-repos: true
+          # Optional:
+          exclude-disabled-repos: true
 ```
 
 ## 🛠️ Built With
 
 - [Node.js](https://nodejs.org)
 - [TypeScript](https://www.typescriptlang.org)
-- [Esbuild]([https://esbuild.org)
+- [Esbuild](https://esbuild.org)
 
 ## 🖇️ Contributing
 
@@ -215,7 +218,7 @@ See also the list of [contributors][contributors] who participated in this proje
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE.md](../LICENSE.md)
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md)
 file for details
 
 ## 🎁 Acknowledgments
