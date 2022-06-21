@@ -30,7 +30,7 @@ jobs:
           cache: npm
 
       - name: 📦 Install dependencies
-        run: npm install
+        run: npm ci
 
   eslint:
     needs: [ cache ]
@@ -49,7 +49,7 @@ jobs:
           cache: npm
 
       - name: 📦 Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: 🛡️ Run ESLint
         run:
@@ -100,7 +100,7 @@ jobs:
           cache: npm
 
       - name: 📦 Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: 🛡️ Test build
         run: npm run --if-present test:build
