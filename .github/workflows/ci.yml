@@ -65,6 +65,8 @@ jobs:
           body: |
             Oh eslint fail 😥!
 
+            See errors [here](https://github.com/srealmoreno/label-sync-action/pull/${{ github.event.pull_request.number }}/checks?check_run_id=${{ github.run_id }})
+
             Thanks for taking the time to contribute  @${{ github.event.pull_request.user.login }}!
 
             The eslint tests failed. Please fix the issues and submit a pull request again.
