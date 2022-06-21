@@ -3,7 +3,7 @@
   "version": "1.0.1-beta.0",
   "engines": {
     "node": "v16",
-    "npm": "v8.12.2"
+    "npm": "v8"
   },
   "description": "Keeps your labels in sync in a GitHub repo(s) from a config file. Manage all tags from all your repositories in a single place.",
   "main": "dist/label-sync-action.cjs",
