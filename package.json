@@ -50,7 +50,11 @@
     "@microsoft/eslint-formatter-sarif": "3.0.0",
     "@types/github-label-sync": "2.0.2",
     "@types/js-yaml": "4.0.5",
-    "esbuild": "0.14.46",
+    "@typescript-eslint/eslint-plugin": "5.29.0",
+    "@typescript-eslint/experimental-utils": "5.29.0",
+    "esbuild": "0.14.47",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-promise": "6.0.0",
     "semver": "7.3.7",
     "ts-standard": "11.0.0",
     "typescript": "4.7.4"
