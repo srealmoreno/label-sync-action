@@ -14,7 +14,7 @@
     "build:esm6": "tsc --target es6    --module esm6     --outDir build/es6     && tsc-alias --dir build/esm6",
     "build:cjs": " tsc --target es6    --module commonjs --outDir build/cjs     && tsc-alias --dir build/cjs",
     "clean": "rm -rf build dist",
-    "lint": "ts-standard src",
+    "lint": "eslint src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:build": "tsc --noEmit"
   },

@@ -53,10 +53,9 @@ jobs:
 
       - name: 🛡️ Run ESLint
         run:
-          npx eslint src
+          npm run lint --
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
-        continue-on-error: true
 
       - name: 💬 Reply comment
         if: failure()
@@ -78,6 +77,7 @@ jobs:
             Thanks!
 
       - name: ⤴️ Upload analysis results to GitHub
+        if: always()
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: eslint-results.sarif
@@ -104,16 +104,12 @@ jobs:
 
       - name: 🛡️ Test build
         run: npm run --if-present test:build
-        continue-on-error: true
 
       - name: 🛡️ Test unit
         run: npm run --if-present test:unit
-        continue-on-error: true
 
       - name: 🛡️ Test integration
         run: npm run --if-present test:integration
-        continue-on-error: true
 
       - name: 🛡️ Test e2e
         run: npm run --if-present test:e2e
-        continue-on-error: true
