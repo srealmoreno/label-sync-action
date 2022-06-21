@@ -8,14 +8,13 @@
   "main": "dist/label-sync-action.cjs",
   "type": "module",
   "scripts": {
-    "dist": "npm run bundle",
-    "bundle": "esbuild --outfile=dist/label-sync-action.cjs --platform=node --target=node16 --minify --bundle src/app.js",
+    "dist": "esbuild --outfile=dist/label-sync-action.cjs --platform=node --target=node16 --minify --bundle src/app.ts",
+    "bundle": "npm run dist",
     "build:esm": " tsc --target es2022 --module es2022   --outDir build/esm2022 && tsc-alias --dir build/esm2022",
     "build:esm6": "tsc --target es6    --module esm6     --outDir build/es6     && tsc-alias --dir build/esm6",
     "build:cjs": " tsc --target es6    --module commonjs --outDir build/cjs     && tsc-alias --dir build/cjs",
     "clean": "rm -rf build dist",
-    "lint": "ts-standard src",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
     "test:build": "tsc --noEmit"
   },
   "keywords": [
@@ -40,6 +39,7 @@
     "@actions/core": "1.9.0",
     "ajv-errors": "3.0.0",
     "axios": "0.27.2",
+    "editorconfig-checker": "^4.0.2",
     "github-label-sync": "2.2.0",
     "js-yaml": "4.1.0",
     "jsonc-simple-parser": "2.2.1",
@@ -61,6 +61,7 @@
       "es6": true
     },
     "parserOptions": {
+      "warnOnUnsupportedTypeScriptVersion": false,
       "project": "./tsconfig.json"
     },
     "extends": [
