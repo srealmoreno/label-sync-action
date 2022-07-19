@@ -22,8 +22,8 @@ export async function getRepos (token: string, autoDiscoverRepos: AutoDiscoverRe
     auth: token
   })
 
-  const { data }: { data: repository[] } = await octokit
-    .request(`GET /${accountType}s/{${accountType}}/repos`, { [accountType]: owner })
+  const data = await octokit
+    .paginate(octokit.rest.repos.listForAuthenticatedUser, { owner, per_page: 100 })
     .catch((error: Error) => {
       throw new Error(
         `Failed to fetch repos from owner: '${owner}' accountType: '${accountType}' GitHub API error: ${error.message}`
