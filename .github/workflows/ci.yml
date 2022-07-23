@@ -60,6 +60,7 @@ jobs:
         if: failure()
         uses: peter-evans/create-or-update-comment@v2
         with:
+          token: ${{ secrets.COMMENT_TOKEN }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             Oh eslint fail 😥!
