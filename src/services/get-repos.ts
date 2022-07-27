@@ -1,11 +1,8 @@
 import { AutoDiscoverReposOptions } from '@interfaces/inputs'
-import { components } from '@octokit/openapi-types'
 import { isArrayNotEmpty, isArrayOfStrings, isRegExp, isString } from '@utils/index.js'
 import log from '@utils/log.js'
 import { Octokit } from 'octokit'
 import regexParser from 'regex-parser'
-
-type repository = components['schemas']['repository']
 
 export async function getRepos (token: string, autoDiscoverRepos: AutoDiscoverReposOptions): Promise<string[]> {
   const {
