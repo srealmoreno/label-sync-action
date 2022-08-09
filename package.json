@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/srealmoreno/github-label-sync",
   "dependencies": {
-    "@actions/core": "1.9.0",
+    "@actions/core": "1.9.1",
     "ajv-errors": "3.0.0",
     "axios": "0.27.2",
     "github-label-sync": "2.2.0",
