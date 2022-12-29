@@ -40,7 +40,7 @@
   "dependencies": {
     "@actions/core": "1.9.0",
     "ajv-errors": "3.0.0",
-    "axios": "0.27.2",
+    "axios": "1.2.2",
     "github-label-sync": "2.2.0",
     "js-yaml": "4.1.0",
     "jsonc-simple-parser": "2.2.1",
