@@ -12,7 +12,7 @@ export async function getObjectFromUrl<T> (url: string, token?: string, _schema?
         ...authorization
       },
       transformResponse: (res, headers) => {
-        const contentType = headers?.['content-type'] ?? ''
+        const contentType:string = headers?.['content-type'] ?? ''
 
         if (isJsonFile(url) || /jsonc?/.test(contentType)) {
           return parseJson(res)
