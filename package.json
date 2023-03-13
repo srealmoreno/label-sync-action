@@ -44,7 +44,7 @@
     "github-label-sync": "2.2.0",
     "js-yaml": "4.1.0",
     "jsonc-simple-parser": "2.2.1",
-    "octokit": "1.8.1",
+    "octokit": "2.0.14",
     "regex-parser": "2.2.11"
   },
   "devDependencies": {
