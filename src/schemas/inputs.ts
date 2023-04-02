@@ -23,20 +23,20 @@ export const inputSchema: JSONSchemaType<Inputs> = {
     {
       if: {
         properties: {
-          repository: {
+          repositories: {
             $ref: '#string-or-array-not-empty'
           }
         }
       },
       then: {
         propertyNames: {
-          enum: ['token', 'configFile', 'cleanLabels', 'repository']
+          enum: ['token', 'configFile', 'cleanLabels', 'repositories']
         }
       }
     }
   ],
   errorMessage: {
-    oneOf: "Must specify either 'auto-discover-repos' or 'repository'. Both are not allowed."
+    oneOf: "Must specify either 'auto-discover-repos' or 'repositories'. Both are not allowed."
   },
   properties: {
     token: {
@@ -48,7 +48,7 @@ export const inputSchema: JSONSchemaType<Inputs> = {
     cleanLabels: {
       $ref: '#boolean-default-false-nullable'
     },
-    repository: {
+    repositories: {
       $ref: '#string-or-array-not-empty'
     },
     autoDiscoverRepos: {
