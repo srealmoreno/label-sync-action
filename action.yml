@@ -32,7 +32,7 @@ inputs:
     description:
       Clean labels not defined in the config file from the repo(s).
 
-  repository:
+  repositories:
     required: false
     description:
       Repository or List of repositories to sync the labels. (Full name e.g. 'srealmoreno/test-repo')

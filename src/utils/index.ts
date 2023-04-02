@@ -1,12 +1,11 @@
 import { JSONSchemaType } from 'ajv'
 import { load as yamlParser } from 'js-yaml'
 import * as JSONC from 'jsonc-simple-parser'
-// import { parse as jsonParser } from 'jsonc-simple-parser'
 import { getObjectFromUrl } from '@utils/fetch.js'
 import { existsSync, readFileSync } from 'fs'
 import { resolve } from 'path'
 
-const { parse: jsonParser } = JSONC
+const { parse: jsonParser } = JSONC.default
 
 export function isString (value: any): value is string {
   return typeof value === 'string' || value instanceof String

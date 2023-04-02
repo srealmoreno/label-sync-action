@@ -83,7 +83,7 @@ export async function runAction (): Promise<LabelDiffWithRepo | LabelDiffWithRep
     startGroup('Getting repos and labels... (async)')
     const data = await Promise.all([getRepos(inputs.token, inputs.autoDiscoverRepos), getLabels(inputs.configFile)])
     endGroup()
-    inputs.repository = data[0]
+    inputs.repositories = data[0]
     labels = data[1]
   } else {
     startGroup('Getting labels...')
@@ -93,7 +93,7 @@ export async function runAction (): Promise<LabelDiffWithRepo | LabelDiffWithRep
 
   return await setLabels({
     inputs,
-    repos: inputs.repository,
+    repos: inputs.repositories,
     labels
   })
 }
