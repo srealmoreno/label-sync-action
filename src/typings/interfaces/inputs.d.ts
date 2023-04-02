@@ -13,6 +13,6 @@ export interface Inputs {
   token: string
   configFile: string | string[] = '.github/labels.yml'
   cleanLabels?: boolean = false
-  repository?: string | string[]
+  repositories?: string | string[]
   autoDiscoverRepos?: AutoDiscoverReposOptions
 }

@@ -30,10 +30,10 @@ export async function getInputsOfAction (): Promise<Inputs> {
     cleanLabels: getBooleanInput('clean-labels', { required: false })
   }
 
-  const repos = getInput('repository')
+  const repos = getInput('repositories')
 
   if (isStringNotEmpty(repos)) {
-    inputs.repository = convertStringToArray(repos)
+    inputs.repositories = convertStringToArray(repos)
   }
 
   const autoDiscoverRepos = getBooleanInput('auto-discover-repos')
@@ -50,7 +50,7 @@ export async function getInputsOfAction (): Promise<Inputs> {
       excludePrivateRepos: getBooleanInput('exclude-private-repos')
     }
   } else if (isStringEmpty(repos)) {
-    inputs.repository = String(process.env.GITHUB_REPOSITORY)
+    inputs.repositories = String(process.env.GITHUB_REPOSITORY)
   }
 
   log.info(`Inputs: ${JSON.stringify(inputs, null, 2)}`)
