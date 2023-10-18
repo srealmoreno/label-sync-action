@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@microsoft/eslint-formatter-sarif": "3.0.0",
-    "@types/github-label-sync": "2.0.2",
+    "@types/github-label-sync": "2.3.2",
     "@types/js-yaml": "4.0.5",
     "@typescript-eslint/experimental-utils": "5.57.0",
     "@typescript-eslint/eslint-plugin": "5.57.0",
