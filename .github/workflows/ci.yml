@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 1
 
       - name: 🚀 Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
           cache: npm
@@ -42,7 +42,7 @@ jobs:
           fetch-depth: 1
 
       - name: 🚀 Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
           cache: npm
@@ -95,7 +95,7 @@ jobs:
           fetch-depth: 1
 
       - name: 🚀 Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 16
           cache: npm
