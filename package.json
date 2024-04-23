@@ -48,7 +48,7 @@
     "regex-parser": "2.2.11"
   },
   "devDependencies": {
-    "@microsoft/eslint-formatter-sarif": "3.0.0",
+    "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@types/github-label-sync": "2.0.2",
     "@types/js-yaml": "4.0.5",
     "@typescript-eslint/experimental-utils": "5.57.0",
