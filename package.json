@@ -1,8 +1,8 @@
 {
   "name": "label-sync-action",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "engines": {
-    "node": "v16",
+    "node": "v20",
     "npm": "v8"
   },
   "description": "Keeps your labels in sync in a GitHub repo(s) from a config file. Manage all tags from all your repositories in a single place.",
@@ -10,7 +10,7 @@
   "type": "module",
   "scripts": {
     "dist": "npm run bundle",
-    "bundle": "esbuild --outfile=dist/label-sync-action.cjs --platform=node --target=node16 --minify --bundle src/app.js",
+    "bundle": "esbuild --outfile=dist/label-sync-action.cjs --platform=node --target=node20 --minify --bundle src/app.js",
     "build:esm": " tsc --target es2022 --module es2022   --outDir build/esm2022 && tsc-alias --dir build/esm2022",
     "build:esm6": "tsc --target es6    --module esm6     --outDir build/es6     && tsc-alias --dir build/esm6",
     "build:cjs": " tsc --target es6    --module commonjs --outDir build/cjs     && tsc-alias --dir build/cjs",

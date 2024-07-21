@@ -18,9 +18,9 @@ jobs:
           fetch-depth: 1
 
       - name: 🚀 Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version-file: .nvmrc
           cache: npm
 
       - name: 📦 Install dependencies
@@ -31,7 +31,7 @@ jobs:
           npx esbuild src/app.js
             --outfile=tmp/label-sync-action.cjs
             --platform=node
-            --target=node16
+            --target=node20
             --minify
             --bundle
       - name: 🛡️ Verify Hash dist/label-sync-action.cjs
