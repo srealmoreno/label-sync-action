@@ -49,7 +49,7 @@ How to create a config file:
   description: Solely about the documentation of the project.
 ```
 
-> The `#` in color it's optional.
+> The `#` in `color` is optional.
 
 ```jsonc
 [
@@ -78,7 +78,7 @@ How to create a config file:
 ]
 ```
 
-> The `#` in color it's optional.
+> The `#` in `color` is optional.
 
 ### Create a workflow 📝
 
