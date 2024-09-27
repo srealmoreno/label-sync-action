@@ -93,13 +93,13 @@ on:
 jobs:
   labels:
     name: ♻️ Sync labels
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
 
       - name: 🚀 Run Label Sync
-        uses: srealmoreno/label-sync-action@v1
+        uses: srealmoreno/label-sync-action@v2
 ```
 
 ## 📋 Usage
@@ -111,7 +111,7 @@ Specify a repository or a list of repositories
 ```yaml
 ...
       - name: 🚀 Run Label Sync
-        uses: srealmoreno/label-sync-action@v1
+        uses: srealmoreno/label-sync-action@v2
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
@@ -144,7 +144,7 @@ If you use only url, the `actions/checkout@v3` step is not necessary
 ...
     steps:
       - name: 🚀 Run Label Sync
-        uses: srealmoreno/label-sync-action@v1
+        uses: srealmoreno/label-sync-action@v2
         with:
           config-file: https://raw.githubusercontent.com/srealmoreno/label-sync-action/main/.github/labels/labels.yml
 ```
@@ -157,7 +157,7 @@ tags in all repositories you can use the `auto-discover-repos` option.
 ```yaml
 ...
       - name: 🚀 Run Label Sync
-        uses: srealmoreno/label-sync-action@v1
+        uses: srealmoreno/label-sync-action@v2
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           auto-discover-repos: true
