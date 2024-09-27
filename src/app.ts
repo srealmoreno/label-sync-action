@@ -7,7 +7,8 @@ const start = performance.now()
 runAction()
   .then(logLabelDiffWithRepo)
   .catch(log.fatal)
-
-const end = performance.now()
-const time = ((end - start) / 1000).toFixed(4)
-log.success(`Finished in ${time}s`)
+  .finally(() => {
+    const end = performance.now()
+    const time = ((end - start) / 1000).toFixed(4)
+    log.success(`Finished in ${time}s`)
+  })
