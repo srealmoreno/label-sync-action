@@ -14,7 +14,7 @@ concurrency:
 jobs:
   stale:
     name: 👻 Stale Close Issues and PRs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: 🚀 Run stale
         uses: actions/stale@v8

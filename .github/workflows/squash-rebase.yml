@@ -52,7 +52,7 @@ jobs:
         contains(github.event.comment.body, '@gitbot rebase') ||
         contains(github.event.comment.body, '@gitbot squash')
       )
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       permission: ${{ steps.check-permissions.outputs.permission }}
     steps:
@@ -75,7 +75,7 @@ jobs:
     needs: [catch-comment]
     name: ✅ Permission approved
     if: needs.catch-comment.outputs.permission == 'true'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
@@ -108,7 +108,7 @@ jobs:
     needs: [catch-comment]
     name: ⛔ Permission denied
     if: needs.catch-comment.outputs.permission == 'false'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: 👎 Reaction to comment
         uses: peter-evans/create-or-update-comment@v2

@@ -15,7 +15,7 @@ concurrency:
 jobs:
   cache:
     name: 💾 Cache dependencies
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
@@ -34,7 +34,7 @@ jobs:
   eslint:
     needs: [ cache ]
     name: 🛂 Run eslint scanning
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
@@ -87,7 +87,7 @@ jobs:
   tests:
     needs: [ cache ]
     name: 🚀 Run tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3
