@@ -14,7 +14,7 @@ concurrency:
 jobs:
   lock:
     name: 🔐 Lock closed issues and PRs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: 🚀 Run lock threads
         uses: dessant/lock-threads@v3

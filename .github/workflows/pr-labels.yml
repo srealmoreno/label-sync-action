@@ -11,7 +11,7 @@ concurrency:
 jobs:
   pr-labels:
     name: 🏷️ Verify PR Labels
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: 🚀 Run verify pr label
         uses: jesusvasquez333/verify-pr-label-action@v1.4.0
