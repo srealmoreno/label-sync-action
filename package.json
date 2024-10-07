@@ -52,7 +52,7 @@
     "@types/github-label-sync": "2.0.2",
     "@types/js-yaml": "4.0.9",
     "@types/node": "22.7.4",
-    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/eslint-plugin": "8.8.1",
     "@typescript-eslint/experimental-utils": "5.62.0",
     "esbuild": "0.24.0",
     "eslint-plugin-import": "2.30.0",
