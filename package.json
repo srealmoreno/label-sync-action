@@ -42,7 +42,7 @@
     "ajv-errors": "3.0.0",
     "axios": "1.7.7",
     "github-label-sync": "2.3.1",
-    "js-yaml": "4.1.0",
+    "js-yaml": "5.2.2",
     "jsonc-simple-parser": "3.0.0",
     "octokit": "2.0.14",
     "regex-parser": "2.3.0"
